@@ -1,5 +1,6 @@
 package view;
 
+import controller.GameController;
 import model.Choice;
 
 public class ConsoleView implements GameView {
@@ -54,5 +55,11 @@ public class ConsoleView implements GameView {
     @Override
     public void showGameWinner(String message) {
         System.out.println(message);
+    }
+
+    public static void main(String[] args) {
+        ConsoleView consoleView = new ConsoleView();
+        GameController gameController = new GameController(consoleView);
+        gameController.startGame();
     }
 }
