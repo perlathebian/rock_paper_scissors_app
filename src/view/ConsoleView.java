@@ -60,6 +60,10 @@ public class ConsoleView implements GameView {
     public static void main(String[] args) {
         ConsoleView consoleView = new ConsoleView();
         GameController gameController = new GameController(consoleView);
-        gameController.startGame();
+
+        while (gameController.getRoundsPlayed() < 3){
+            String output = gameController.processRound(null);
+            System.out.println(output);
+        }
     }
 }

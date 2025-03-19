@@ -22,49 +22,53 @@ public class GameController {
         this.view = view;
     }
 
-    public void startGame(){
-        view.showWelcomeMessage();
-
-        int starter = random.nextInt(2);
-        if(starter == 0){
-            view.showUserFirstMessage();
-        } else {
-            view.showComputerFirstMessage();
-        }
-
-        for(int round = 1; round <= 3; round++){
-            view.showRoundMessage(round);
-            Choice userChoice = getUserChoice();
-            Choice computerChoice = getComputerChoice();
-
-            view.showChoices(userChoice, computerChoice);
-
-            String result = userChoice.determineWinner(computerChoice);
-            view.showResult(result);
-
-            updateScore(result);
-            roundsPlayed++;
-            if (roundsPlayed == 3) {
-                showFinalScore();
-                break;
-            }
-        }
+    public int getRoundsPlayed(){
+        return roundsPlayed;
     }
 
-    public String playRound(String userChoice) {
-        if (roundsPlayed >= 3) {
+    public String processRound(String userChoice){
+        // if game is already over, return final message immediatelu
+        if(roundsPlayed >= 3) {
             return "Game Over! Final Score: You: " + userScore + " Computer: " + computerScore;
         }
 
-        Choice userChoiceObj = createChoice(userChoice);
+        // for console mode, if no choice was provided, get input from user
+        Choice userChoiceObj;
+        if(userChoice == null){
+            userChoiceObj = getUserChoice();
+        } else {
+            userChoiceObj = createChoice(userChoice);
+        }
+
+        // get computer's choice
         Choice computerChoiceObj = getComputerChoice();
 
+        // determine round result and update score
         String result = userChoiceObj.determineWinner(computerChoiceObj);
         updateScore(result);
         roundsPlayed++;
-        return "You chose: " + userChoice + "\nComputer chose: " + computerChoiceObj.getChoice() + "\n" + result;
+
+        // if this was the final (3rd) round, show final score and winner via view
+        if(roundsPlayed >= 3){
+            String finalMessage = "Game Over! Final Score: You: " + userScore + " Computer: " + computerScore;
+            view.showFinalScore(userScore, computerScore);
+            if(userScore > computerScore){
+                view.showGameWinner("You win the game!");
+            } else if(computerScore > userScore){
+                view.showGameWinner("You lose the game!");
+            } else {
+                view.showGameWinner("It's a tie!");
+            }
+            return finalMessage;
+        }
+
+        // otherwise, return the round result
+        return "You chose: " + userChoiceObj.getChoice() +
+                "\nComputer chose: " + computerChoiceObj.getChoice() +
+                "\n" + result;
     }
 
+    // for console mode
     private Choice getUserChoice(){
         Choice userChoice = null;
         while(userChoice == null){
@@ -78,6 +82,7 @@ public class GameController {
         return userChoice;
     }
 
+    // for both console and gui modes
     private Choice getComputerChoice(){
         String[] options = {"rock", "paper", "scissors"};
         String computerInput = options[random.nextInt(3)];
@@ -101,16 +106,16 @@ public class GameController {
         }
     }
 
-    private void showFinalScore(){
-        view.showFinalScore(userScore, computerScore);
-        if(userScore > computerScore){
-            view.showGameWinner("You win the game!");
-        } else if(computerScore > userScore){
-            view.showGameWinner("You lose the game!");
-        } else {
-            view.showGameWinner("It's a tie!");
-        }
-    }
+//    private void showFinalScore(){
+//        view.showFinalScore(userScore, computerScore);
+//        if(userScore > computerScore){
+//            view.showGameWinner("You win the game!");
+//        } else if(computerScore > userScore){
+//            view.showGameWinner("You lose the game!");
+//        } else {
+//            view.showGameWinner("It's a tie!");
+//        }
+//    }
 
     // Getter methods for the scores
     public int getUserScore() {

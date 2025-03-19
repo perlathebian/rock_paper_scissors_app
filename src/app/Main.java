@@ -21,7 +21,10 @@ public class Main {
         if (choice == 1) {
             // Console Mode
             GameController consoleController = new GameController(new ConsoleView());
-            consoleController.startGame();
+            while (consoleController.getRoundsPlayed() < 3) {
+                String output = consoleController.processRound(null);
+                System.out.println(output);
+            }
         } else if (choice == 2) {
             // GUI Mode
             Application.launch(GameUI.class, args);

@@ -34,10 +34,10 @@ public class GameUI extends Application implements GameView{
         Button exitButton = new Button("Exit");
 
         // set up event handlers
-        rockButton.setOnAction(e -> handleChoice("rock"));
-        paperButton.setOnAction(e -> handleChoice("paper"));
-        scissorsButton.setOnAction(e -> handleChoice("scissors"));
-        exitButton.setOnAction(e -> stage.close());
+        rockButton.setOnAction(_ -> handleChoice("rock"));
+        paperButton.setOnAction(_ -> handleChoice("paper"));
+        scissorsButton.setOnAction(_ -> handleChoice("scissors"));
+        exitButton.setOnAction(_ -> stage.close());
 
         // add buttons and texts to VBox
         vbox.getChildren().addAll(rockButton, paperButton, scissorsButton, resultText, scoreText, exitButton);
@@ -100,13 +100,7 @@ public class GameUI extends Application implements GameView{
 
     // Method to handle user choices in GameUI
     private void handleChoice(String userChoice) {
-        if (gameController.getUserScore() + gameController.getComputerScore() >= 3) {
-            resultText.setText("Game Over! Final Score: You - " + gameController.getUserScore() + " Computer - " + gameController.getComputerScore());
-            scoreText.setText("");
-            return; // Stop handling choices after 3 rounds
-        }
-
-        String result = gameController.playRound(userChoice);
+        String result = gameController.processRound(userChoice);
         resultText.setText(result);
         scoreText.setText("Score - You: " + gameController.getUserScore() + " Computer: " + gameController.getComputerScore());
     }
