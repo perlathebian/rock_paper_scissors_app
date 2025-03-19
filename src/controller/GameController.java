@@ -5,6 +5,7 @@ import model.Rock;
 import model.Paper;
 import model.Scissors;
 import view.ConsoleView;
+import view.GameView;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -14,40 +15,64 @@ public class GameController {
     private int computerScore = 0;
     private final Random random = new Random();
     private final Scanner scanner = new Scanner(System.in);
+    private final GameView view;
+    private int roundsPlayed = 0;
+
+    public GameController(GameView view){
+        this.view = view;
+    }
 
     public void startGame(){
-        ConsoleView.showWelcomeMessage();
+        view.showWelcomeMessage();
 
         int starter = random.nextInt(2);
         if(starter == 0){
-            ConsoleView.showUserFirstMessage();
+            view.showUserFirstMessage();
         } else {
-            ConsoleView.showComputerFirstMessage();
+            view.showComputerFirstMessage();
         }
 
         for(int round = 1; round <= 3; round++){
-            ConsoleView.showRoundMessage(round);
+            view.showRoundMessage(round);
             Choice userChoice = getUserChoice();
             Choice computerChoice = getComputerChoice();
 
-            ConsoleView.showChoices(userChoice, computerChoice);
+            view.showChoices(userChoice, computerChoice);
 
             String result = userChoice.determineWinner(computerChoice);
-            ConsoleView.showResult(result);
+            view.showResult(result);
 
             updateScore(result);
+            roundsPlayed++;
+            if (roundsPlayed == 3) {
+                showFinalScore();
+                break;
+            }
         }
-        showFinalScore();
+    }
+
+    public String playRound(String userChoice) {
+        if (roundsPlayed >= 3) {
+            return "Game Over! Final Score: You: " + userScore + " Computer: " + computerScore;
+        }
+
+        Choice userChoiceObj = createChoice(userChoice);
+        Choice computerChoiceObj = getComputerChoice();
+
+        String result = userChoiceObj.determineWinner(computerChoiceObj);
+        updateScore(result);
+        roundsPlayed++;
+        return "You chose: " + userChoice + "\nComputer chose: " + computerChoiceObj.getChoice() + "\n" + result;
     }
 
     private Choice getUserChoice(){
         Choice userChoice = null;
         while(userChoice == null){
-            ConsoleView.showChoicePrompt();
+            view.showChoicePrompt();
             String userInput = scanner.nextLine().toLowerCase();
             userChoice = createChoice(userInput);
             if(userChoice == null){
-                ConsoleView.showInvalidChoiceMessage();
+                view.showInvalidChoiceMessage();
             }
         }
         return userChoice;
@@ -77,13 +102,22 @@ public class GameController {
     }
 
     private void showFinalScore(){
-        ConsoleView.showFinalScore(userScore, computerScore);
+        view.showFinalScore(userScore, computerScore);
         if(userScore > computerScore){
-            ConsoleView.showGameWinner("You win the game!");
+            view.showGameWinner("You win the game!");
         } else if(computerScore > userScore){
-            ConsoleView.showGameWinner("You lose the game!");
+            view.showGameWinner("You lose the game!");
         } else {
-            ConsoleView.showGameWinner("It's a tie!");
+            view.showGameWinner("It's a tie!");
         }
+    }
+
+    // Getter methods for the scores
+    public int getUserScore() {
+        return userScore;
+    }
+
+    public int getComputerScore() {
+        return computerScore;
     }
 }
