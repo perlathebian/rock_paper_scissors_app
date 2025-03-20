@@ -50,8 +50,6 @@ public class GameController {
 
         // if this was the final (3rd) round, show final score and winner via view
         if(roundsPlayed >= 3){
-            String finalMessage = "Game Over! Final Score: You: " + userScore + " Computer: " + computerScore;
-            view.showFinalScore(userScore, computerScore);
             if(userScore > computerScore){
                 view.showGameWinner("You win the game!");
             } else if(computerScore > userScore){
@@ -59,6 +57,8 @@ public class GameController {
             } else {
                 view.showGameWinner("It's a tie!");
             }
+            String finalMessage = "Game Over! Final Score: You: " + userScore + " Computer: " + computerScore;
+            view.showFinalScore(userScore, computerScore);
             return finalMessage;
         }
 
@@ -105,17 +105,6 @@ public class GameController {
             computerScore++;
         }
     }
-
-//    private void showFinalScore(){
-//        view.showFinalScore(userScore, computerScore);
-//        if(userScore > computerScore){
-//            view.showGameWinner("You win the game!");
-//        } else if(computerScore > userScore){
-//            view.showGameWinner("You lose the game!");
-//        } else {
-//            view.showGameWinner("It's a tie!");
-//        }
-//    }
 
     // Getter methods for the scores
     public int getUserScore() {
