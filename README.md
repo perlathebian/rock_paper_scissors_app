@@ -30,4 +30,4 @@ A simple **Rock Paper Scissors** game built in Java.
 <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by iconading - Flaticon</a> </br>
 
 ## Game Layout
-<img src="src/resources/UI_screenshot.png">
+<img src="src/main/resources /resources/UI_screenshot.png">

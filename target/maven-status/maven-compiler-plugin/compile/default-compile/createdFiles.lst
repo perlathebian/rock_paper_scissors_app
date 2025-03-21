@@ -1,0 +1,9 @@
+view\GameUI.class
+model\Paper.class
+model\Choice.class
+view\GameView.class
+app\Main.class
+controller\GameController.class
+model\Scissors.class
+model\Rock.class
+view\ConsoleView.class

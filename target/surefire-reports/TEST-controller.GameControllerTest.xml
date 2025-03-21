@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="controller.GameControllerTest" time="0.566" tests="11" errors="0" skipped="0" failures="4">
+  <properties>
+    <property name="java.specification.version" value="22"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\BC\Desktop\Projects\rock_paper_scissors_app\target\test-classes;C:\Users\BC\Desktop\Projects\rock_paper_scissors_app\target\classes;C:\Users\BC\.m2\repository\org\mockito\mockito-core\4.0.0\mockito-core-4.0.0.jar;C:\Users\BC\.m2\repository\net\bytebuddy\byte-buddy\1.11.19\byte-buddy-1.11.19.jar;C:\Users\BC\.m2\repository\net\bytebuddy\byte-buddy-agent\1.11.19\byte-buddy-agent-1.11.19.jar;C:\Users\BC\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\BC\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\BC\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\BC\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\BC\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\BC\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\BC\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-graphics\22.0.1\javafx-graphics-22.0.1.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-graphics\22.0.1\javafx-graphics-22.0.1-win.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-base\22.0.1\javafx-base-22.0.1.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-base\22.0.1\javafx-base-22.0.1-win.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-controls\22.0.1\javafx-controls-22.0.1.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-controls\22.0.1\javafx-controls-22.0.1-win.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Budapest"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="22"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Users\BC\.jdks\openjdk-22.0.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\BC\AppData\Local\Temp\surefire8940632252263083585\surefirebooter5926632261720978664.jar C:\Users\BC\AppData\Local\Temp\surefire8940632252263083585 2025-03-21T10-41-43_286-jvmRun1 surefire2423862587806953267tmp surefire_015389545118286915087tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\BC\Desktop\Projects\rock_paper_scissors_app\target\test-classes;C:\Users\BC\Desktop\Projects\rock_paper_scissors_app\target\classes;C:\Users\BC\.m2\repository\org\mockito\mockito-core\4.0.0\mockito-core-4.0.0.jar;C:\Users\BC\.m2\repository\net\bytebuddy\byte-buddy\1.11.19\byte-buddy-1.11.19.jar;C:\Users\BC\.m2\repository\net\bytebuddy\byte-buddy-agent\1.11.19\byte-buddy-agent-1.11.19.jar;C:\Users\BC\.m2\repository\org\objenesis\objenesis\3.2\objenesis-3.2.jar;C:\Users\BC\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\BC\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\BC\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\BC\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\BC\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\BC\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-graphics\22.0.1\javafx-graphics-22.0.1.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-graphics\22.0.1\javafx-graphics-22.0.1-win.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-base\22.0.1\javafx-base-22.0.1.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-base\22.0.1\javafx-base-22.0.1-win.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-controls\22.0.1\javafx-controls-22.0.1.jar;C:\Users\BC\.m2\repository\org\openjfx\javafx-controls\22.0.1\javafx-controls-22.0.1-win.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\BC"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-04-16"/>
+    <property name="java.home" value="C:\Users\BC\.jdks\openjdk-22.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\BC\Desktop\Projects\rock_paper_scissors_app"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\BC\AppData\Local\Temp\surefire8940632252263083585\surefirebooter5926632261720978664.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="22.0.1+8-16"/>
+    <property name="user.name" value="BC"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\BC\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\BC\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2023.3.4"/>
+    <property name="java.version" value="22.0.1"/>
+    <property name="user.dir" value="C:\Users\BC\Desktop\Projects\rock_paper_scissors_app"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\BC\.jdks\openjdk-22.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\BC\Downloads\openjdk-21.0.2_windows-x64_bin\jdk-21.0.2\bin;C:\Users\BC\Desktop\Computer Aided Math and Visualization\bin;C:\Users\BC\Desktop\Applied Stats\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\apache-maven-3.9.6\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\java8path;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\BC\Downloads\openjdk-21.0.2_windows-x64_bin\jdk-21.0.2\bin;C:\Users\BC\Desktop\Computer Aided Math and Visualization\bin;C:\Users\BC\Desktop\Applied Stats\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\nodejs\;C:\Program Files\apache-maven-3.9.6\bin;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PuTTY\;C:\Users\BC\Desktop\Scripts\;C:\Users\BC\Desktop\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Users\BC\AppData\Local\Microsoft\WindowsApps;C:\Users\BC\AppData\Local\Turbo\Cmd\;C:\Users\BC\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;C:\Users\BC\AppData\Roaming\npm;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="22.0.1+8-16"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="66.0"/>
+  </properties>
+  <testcase name="testCreateChoice_Rock" classname="controller.GameControllerTest" time="0.494"/>
+  <testcase name="testGetRoundsPlayed" classname="controller.GameControllerTest" time="0.008"/>
+  <testcase name="testProcessRound_GameOver" classname="controller.GameControllerTest" time="0.015"/>
+  <testcase name="testGetComputerScore" classname="controller.GameControllerTest" time="0.001"/>
+  <testcase name="testCreateChoice_Scissors" classname="controller.GameControllerTest" time="0.002"/>
+  <testcase name="testCreateChoice_Paper" classname="controller.GameControllerTest" time="0.002"/>
+  <testcase name="testProcessRound_UserWins" classname="controller.GameControllerTest" time="0.004">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at controller.GameControllerTest.testProcessRound_UserWins(GameControllerTest.java:71)
+]]></failure>
+  </testcase>
+  <testcase name="testGetUserScore" classname="controller.GameControllerTest" time="0.001">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at controller.GameControllerTest.testGetUserScore(GameControllerTest.java:48)
+]]></failure>
+  </testcase>
+  <testcase name="testCreateChoice_InvalidChoice" classname="controller.GameControllerTest" time="0.001"/>
+  <testcase name="testProcessRound_Draw" classname="controller.GameControllerTest" time="0.001">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at controller.GameControllerTest.testProcessRound_Draw(GameControllerTest.java:92)
+]]></failure>
+  </testcase>
+  <testcase name="testProcessRound_ComputerWins" classname="controller.GameControllerTest" time="0.002">
+    <failure type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at controller.GameControllerTest.testProcessRound_ComputerWins(GameControllerTest.java:81)
+]]></failure>
+  </testcase>
+</testsuite>

@@ -1,0 +1,20 @@
+-------------------------------------------------------------------------------
+Test set: controller.GameControllerTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.566 s <<< FAILURE! - in controller.GameControllerTest
+controller.GameControllerTest.testProcessRound_UserWins  Time elapsed: 0.004 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at controller.GameControllerTest.testProcessRound_UserWins(GameControllerTest.java:71)
+
+controller.GameControllerTest.testGetUserScore  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <1> but was: <0>
+	at controller.GameControllerTest.testGetUserScore(GameControllerTest.java:48)
+
+controller.GameControllerTest.testProcessRound_Draw  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at controller.GameControllerTest.testProcessRound_Draw(GameControllerTest.java:92)
+
+controller.GameControllerTest.testProcessRound_ComputerWins  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at controller.GameControllerTest.testProcessRound_ComputerWins(GameControllerTest.java:81)
+

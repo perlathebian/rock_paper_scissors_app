@@ -89,7 +89,7 @@ public class GameController {
         return createChoice(computerInput);
     }
 
-    private Choice createChoice(String choice){
+    Choice createChoice(String choice){
         return switch (choice) {
           case "rock" -> new Rock();
           case "paper" -> new Paper();

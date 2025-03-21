@@ -62,10 +62,10 @@ public class GameUI extends Application implements GameView{
         exitButton.setPrefHeight(40);
 
         // set up event handlers
-        rockButton.setOnAction(_ -> handleChoice("rock"));
-        paperButton.setOnAction(_ -> handleChoice("paper"));
-        scissorsButton.setOnAction(_ -> handleChoice("scissors"));
-        exitButton.setOnAction(_ -> stage.close());
+        rockButton.setOnAction(event -> handleChoice("rock"));
+        paperButton.setOnAction(event -> handleChoice("paper"));
+        scissorsButton.setOnAction(event -> handleChoice("scissors"));
+        exitButton.setOnAction(event -> stage.close());
 
         // add buttons and texts to VBox
         vbox.getChildren().addAll(rockButton, paperButton, scissorsButton, resultText, scoreText, exitButton);
