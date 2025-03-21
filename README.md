@@ -19,15 +19,10 @@ A simple **Rock Paper Scissors** game built in Java.
       `java -cp out view.GameUI`
     - Or run the `Main` class in `app.Main` to choose between **Console Mode** or **UI Mode** when prompted.
 
-## Future Improvements
-- [ ] Add more advanced game logic
-- [ ] Show game history
-- [ ] Implement unit tests
-
 ## Image Sources
 <a href="https://www.flaticon.com/free-icons/fist" title="fist icons">Fist icons created by Cuputo - Flaticon</a> </br>
 <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by Cap Cool - Flaticon</a> </br>
 <a href="https://www.flaticon.com/free-icons/rock-paper-scissors" title="rock paper scissors icons">Rock paper scissors icons created by iconading - Flaticon</a> </br>
 
 ## Game Layout
-<img src="src/main/resources /resources/UI_screenshot.png">
+<img src="src/main/resources/resources/UI_screenshot.png">
