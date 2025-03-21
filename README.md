@@ -2,6 +2,14 @@
 
 A simple **Rock Paper Scissors** game built in Java.
 
+## Notes
+This project demonstrates my understanding of basic Java concepts, Object-Oriented Programming, and GUI design using JavaFX. The game logic is encapsulated in the `GameController` class, with separate views for the console and UI versions of the game. It showcases my ability to build functional applications, manage user input, and maintain code readability. You can explore the code in the repository to understand the structure and logic behind the implementation.
+
+Key areas of interest:
+- **Game Logic**: The game logic is encapsulated in classes such as `Choice`, `Rock`, `Paper`, `Scissors`, and `GameController`.
+- **Unit Tests**: Unit tests have been implemented to validate the functionality of core components like the `GameController`.
+- **JavaFX UI**: The UI is implemented using JavaFX for a rich user experience, allowing interaction through graphical elements.
+
 ## Features
 - Play against the computer
 - Score tracking
